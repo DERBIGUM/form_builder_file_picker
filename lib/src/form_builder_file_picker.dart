@@ -77,7 +77,7 @@ class FormBuilderFilePicker extends FormBuilderField<List<PlatformFile>> {
     required super.name,
     super.validator,
     super.initialValue,
-    super.decoration,
+    required InputDecoration decoration,
     super.onChanged,
     super.valueTransformer,
     super.enabled,
@@ -102,7 +102,7 @@ class FormBuilderFilePicker extends FormBuilderField<List<PlatformFile>> {
             final state = field as _FormBuilderFilePickerState;
 
             return InputDecorator(
-              decoration: state.decoration.copyWith(
+              decoration: decoration.copyWith(
                   counterText: maxFiles != null
                       ? '${state._files.length} / $maxFiles'
                       : null),
